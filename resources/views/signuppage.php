@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    $_SESSION["lastpage"] = "signuppage.php";
     include 'fragments/header.php';
 ?>
         <section>
