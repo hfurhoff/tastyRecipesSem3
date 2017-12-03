@@ -29,6 +29,10 @@ class Controller {
         }
     }
     
+    public function shutdown() {
+        $_SESSION['controller'] = serialize($this);
+    }
+    
     public static function storeController(Controller $controller) {
         unset($_SESSION['controller']);
         $_SESSION['controller'] = serialize($controller);

@@ -17,9 +17,4 @@ class Util {
         return Controller::getController();
     }
     
-    public static function shutDown($controller){
-        echo 'komigen';
-        Controller::storeController($controller);
-    }
-    
 }
