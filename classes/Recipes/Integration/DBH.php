@@ -78,7 +78,7 @@ class DBH {
         $selectsql = $con->prepare("SELECT acc FROM user WHERE acc=?");
         $username = $con->real_escape_string($user->getName());
         $selectsql->bind_param('s', $username);
-        $sql->bind_result($result);
+        $selectsql->bind_result($result);
         $selectsql->execute();
         if ($selectsql->fetch()) {
             $this->close($selectsql, $con);
