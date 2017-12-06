@@ -84,8 +84,8 @@ class DBH {
             $this->close($selectsql, $con);
             return false;
         } else {
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            $password = $con->real_escape_string($user->getPass());
+            $password = password_hash($user->getPass(), PASSWORD_DEFAULT);
+            $password = $con->real_escape_string($password);
             $insertsql = $con->prepare("INSERT INTO user (acc, pass) VALUES (?, ?)");
             $insertsql->bind_param('ss', $username, $password);
             $insertsql->execute();
